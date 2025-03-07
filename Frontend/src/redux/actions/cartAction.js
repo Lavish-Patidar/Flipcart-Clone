@@ -10,7 +10,7 @@ export const addToCart = (id, quantity, account) => async (dispatch) => {
     }
 
     try {
-        const { data } = await axios.get(`http://localhost:8000/product/${id}`);
+        const { data } = await axios.get(`https://flipcart-clone-api.vercel.app/${id}`);
         dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...data, quantity } });
         toast.success('Item added to cart!'); // Success notification
 
