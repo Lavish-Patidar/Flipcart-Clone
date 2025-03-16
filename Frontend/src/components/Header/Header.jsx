@@ -38,13 +38,6 @@ const Header = () => {
     return (
         <StyledAppbar>
             <Toolbar style={{ minHeight: 55 }}>
-                <MenuIconButton onClick={handleDrawerOpen} >
-                    <MenuIcon />
-                </MenuIconButton>
-
-                <Drawer open={open} onClose={handleDrawerClose} >
-                    {list()}
-                </Drawer>
 
 
                 <StyledBox to="/">
@@ -62,9 +55,19 @@ const Header = () => {
 
                 <Search />
 
+                <MenuIconButton onClick={handleDrawerOpen} >
+                    <MenuIcon />
+                </MenuIconButton>
+
+                <Drawer open={open} onClose={handleDrawerClose} >
+                    {list()}
+                </Drawer>
+
                 <MainButtonBox>
                     <CustomButtons />
                 </MainButtonBox>
+
+
             </Toolbar>
         </StyledAppbar >
     );

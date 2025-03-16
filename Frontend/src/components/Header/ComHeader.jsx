@@ -36,11 +36,12 @@ export const SearchBox = styled(Box)(({ theme }) => ({
   borderRadius: 5,
   marginLeft: 10,
   display: 'flex',
+
   [theme.breakpoints.down('lg')]: {
     width: '35%'
   },
   [theme.breakpoints.down('md')]: {
-    width: '30%',
+    width: '70%',
   }
 }))
 
@@ -78,6 +79,13 @@ export const Wrapper = styled(Box)(({ theme }) => ({
     fontSize: '15px',
     alignItems: 'center'
   },
+  [theme.breakpoints.down(1050)]: {
+    marginLeft: 10,
+    marginRight: -20,
+    '& > *': {
+      marginRight: '20px !important',
+    }
+  },
   [theme.breakpoints.down('md')]: {
     display: 'block',
     margin: 0,
@@ -107,10 +115,10 @@ export const LoginButton = styled(Button)`
 
 export const MenuIconButton = styled(IconButton)(({ theme }) => ({
   display: 'none',
+  marginLeft: 20,
   [theme.breakpoints.down('md')]: {
     display: 'block',
     color: 'inherit',
-
   }
 }))
 

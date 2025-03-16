@@ -5,13 +5,16 @@ export const LoginWraper = styled(Box)({
     width: '90vh',
 })
 
-export const LoginImage = styled(Box)({
+export const LoginImage = styled(Box)(({ theme }) => ({
     background: '#2874f0 url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png)center 85% no-repeat',
     width: '25%',
     padding: '45px 35px',
     color: "white",
-    fontWeight: '600'
-});
+    fontWeight: '600',
+    [theme.breakpoints.down(600)]: {
+        display: 'none'
+    }
+}));
 
 export const LoginContainer = styled(Box)`
     display: flex;

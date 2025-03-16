@@ -8,6 +8,7 @@ import DetailView from './components/Details/DetailView';
 import Cart from './components/cart/Cart';
 import PlaceOrder from './components/cart/PlaceOrder'; // Import the PlaceOrder component
 import { Toaster } from 'react-hot-toast'
+import MobileLogin from './components/Auth/mobileLogin'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
               <Route path='/product/:id' element={<DetailView />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='/placeorder' element={<PlaceOrder />} />
+              <Route path='/login' element={<MobileLogin />} />
             </Routes>
             <Toaster />
           </Box>

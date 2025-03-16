@@ -11,7 +11,12 @@ import Login from '../Auth/Login';
 import Profile from './Profile';
 
 
+import { useMediaQuery } from '@mui/material';
+import { Link } from 'react-router-dom';
+
 const CustomButtons = () => {
+    const isSmallScreen = useMediaQuery('(max-width:899px)');
+
 
     const [open, setOpen] = useState(false);
     const { account, setAccount } = useContext(DataContext);
@@ -20,10 +25,26 @@ const CustomButtons = () => {
     const openLoginDialog = () => {
         setOpen(true);
     }
+
+
+    const ScreenChecker = () => {
+        if (isSmallScreen) {
+            return (
+                <Link to='/login'>
+                    <LoginButton variant='contained'>Login</LoginButton>
+                </Link>)
+        }
+        else {
+            return <LoginButton variant='contained' onClick={() => openLoginDialog()}>Login</LoginButton>;
+        }
+
+    }
+
     return (
         <Wrapper>
             {
-                account ? <Profile account={account} setAccount={setAccount} /> : <LoginButton variant='contained' onClick={() => openLoginDialog()}>Login</LoginButton>
+                account ? <Profile account={account} setAccount={setAccount} /> : <ScreenChecker />
+
             }
 
             <Typography style={{ marginTop: 3, width: 130 }}>Become a seller</Typography>
